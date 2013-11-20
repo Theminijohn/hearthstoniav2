@@ -12,6 +12,7 @@ gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'devise', '~> 3.1.1'
 gem 'cancan'
 gem 'role_model'
+gem 'friendly_id', '~> 5.0.0'
 
 group :doc do
   gem 'sdoc', require: false

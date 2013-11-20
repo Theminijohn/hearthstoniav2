@@ -1,5 +1,4 @@
 class QuestionsController < ApplicationController
-
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -65,6 +64,7 @@ class QuestionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
