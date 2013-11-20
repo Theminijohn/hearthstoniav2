@@ -10,7 +10,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'devise', '~> 3.1.1'
-gem "cancan"
+gem 'cancan'
+gem 'role_model'
 
 group :doc do
   gem 'sdoc', require: false
