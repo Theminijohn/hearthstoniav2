@@ -9,7 +9,7 @@ class Ability
      can :manage, :all
     else
       # Normal User
-      can :create
+      can :create, Question
       can :read, :all
       can :update, Question do |question|
         question.try(:user) == user
