@@ -3,4 +3,5 @@ class Question < ActiveRecord::Base
   friendly_id :title, :use => [:slugged, :finders, :history]
 
   belongs_to :user
+  has_many :tags
 end

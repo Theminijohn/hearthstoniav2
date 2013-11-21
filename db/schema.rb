@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120055740) do
+ActiveRecord::Schema.define(version: 20131121174919) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -37,6 +37,21 @@ ActiveRecord::Schema.define(version: 20131120055740) do
 
   add_index "questions", ["slug"], name: "index_questions_on_slug", unique: true
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.integer  "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+    t.string   "card_type"
+    t.string   "card_class"
+    t.integer  "card_cost"
+    t.integer  "card_attack"
+    t.integer  "card_health"
+  end
+
+  add_index "tags", ["slug"], name: "index_tags_on_slug", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

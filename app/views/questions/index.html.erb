@@ -1,33 +1,11 @@
-<h1>Listing questions</h1>
+<div class="jumbotron center">
+  <h1>Welcome to my app!</h1>
+  <p>
+    <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  </p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.title %></td>
-        <td><%= question.body %></td>
-        <td><%= link_to 'Show', question %></td>
-        <% if can? :update, question %>
-          <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <% end %>
-        <% if can? :destroy, question %>
-          <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %>
+<% if user_signed_in? %>
+  <%= render @questions %>
+<% end %>

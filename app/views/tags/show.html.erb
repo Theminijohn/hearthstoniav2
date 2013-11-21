@@ -1,0 +1,44 @@
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @tag.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @tag.category %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @tag.card_type %>
+</p>
+
+<p>
+  <strong>Class:</strong>
+  <%= @tag.card_class %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @tag.card_cost %>
+</p>
+
+<p>
+  <strong>Attack:</strong>
+  <%= @tag.card_attack %>
+</p>
+
+<p>
+  <strong>Health:</strong>
+  <%= @tag.card_health %>
+</p>
+
+<% if can? :update, @tag %>
+<%= link_to 'Edit', edit_tag_path(@tag) %>
+<% end %>
+
+
+
+

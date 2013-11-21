@@ -1,0 +1,60 @@
+<h1>Listing tags</h1>
+
+<% if can? :create, @tag %>
+<%= link_to 'New Tag', new_tag_path %>
+<% end %>
+
+<table class="table table-striped table-hover">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>
+      <span class="tag-tooltip"
+            data-original-title="There are three main types of cards: spell cards, equipment cards and minion cards">
+        Type
+      </span>
+    </th>
+    <th>
+      <span class="tag-tooltip"
+            data-original-title="Class is the primary determinant of a hero's powers and abilities">Class</span>
+    </th>
+    <th>
+      <span class="tag-tooltip"
+            data-original-title="Each card features a mana cost in the top-left corner, which indicates the amount of mana that must be expended to play that card, ranging from 0 to 10 mana. ">
+        Cost
+      </span>
+    </th>
+    <th>
+      <span class="tag-tooltip"
+            data-original-title="Minion cards feature an Attack value in the bottom-left corner">
+        Attack
+      </span>
+    </th>
+    <th>
+      <span class="tag-tooltip"
+            data-original-title="Minion cards feature an Health value in the bottom-right corner">
+        Health
+      </span>
+    </th>
+  </tr>
+            </thead>
+  <tbody>
+
+  <% @tags.each do |tag| %>
+    <tr>
+      <td>
+        <%= link_to tag.name, tag, class: "tag-tooltip",
+                    'data-placement' => 'right',
+                    :rel => "tooltip" %>
+
+      </td>
+      <td><%= tag.card_type %></td>
+      <td><%= tag.card_class %></td>
+      <td><%= tag.card_cost %> <span class="icon-mana"></span></td>
+      <td><%= tag.card_attack %> <span class="icon-attack"></span></td>
+      <td><%= tag.card_health %> <span class="icon-health"></span></td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>

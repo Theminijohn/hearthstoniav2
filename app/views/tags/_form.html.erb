@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h1>Create a Tag</h1>
+        </div>
+      </div>
+
+      <div class="panel-body">
+        <%= form_for(@tag) do |f| %>
+          <% if @tag.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+
+              <ul>
+                <% @tag.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :name %><br>
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :category %><br>
+            <%= f.text_field :category, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :card_type %><br>
+            <%= f.text_field :card_type, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :card_class %><br>
+            <%= f.text_field :card_class, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :card_cost %><br>
+            <%= f.text_field :card_cost, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :card_attack %><br>
+            <%= f.text_field :card_attack, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :card_health %><br>
+            <%= f.text_field :card_health, class: "form-control" %>
+          </div>
+
+      </div>
+
+          <div class="panel-footer">
+            <div class="form-group">
+              <%= f.submit "Create Tag", class: "btn btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+        </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      whats up
+    </div>
+  </div>
+</div>

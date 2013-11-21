@@ -1,10 +1,15 @@
 Hearthstoniav2::Application.routes.draw do
 
-  resources :questions
+  resources :tags
+
+  root 'questions#index'
 
   devise_for :users
-  root 'pages#home'
 
-  get "pages/home"
-  get "pages/about"
+  get 'users/:id' => 'users#show'
+
+  resources :questions
+
+  get "users/show"
+  get 'about' => 'pages#about'
 end

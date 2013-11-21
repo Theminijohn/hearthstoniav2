@@ -1,0 +1,9 @@
+<%= tag.name %>
+<%= link_to 'Show', tag %>
+<% if can? :update, tag %>
+  <%= link_to 'Edit', edit_tag_path(tag) %>
+<% end %>
+<% if can? :destroy, tag  %>
+  <%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<br>
