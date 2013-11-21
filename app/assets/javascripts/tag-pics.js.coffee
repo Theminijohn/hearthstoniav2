@@ -1,7 +1,3 @@
 $(document).on "ready page:change", ->
   $(document).ready ->
-  $(".tag-tooltip").tooltip({ title: "whatsup", content: "<img src=\"http://icdn.pro/images/fr/a/v/avatar-barbe-brun-homme-utilisateur-icone-9665-128.png\" />", html: true})
-
-
-
-
+  $(".tag-tooltip").tooltip({ title: "<img src=\"http://media-hearth.cursecdn.com/avatars/33/289/180.png\" />", html: true})
