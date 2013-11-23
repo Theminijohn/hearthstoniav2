@@ -14,7 +14,11 @@ gem 'devise', '~> 3.1.1'
 gem 'cancan'
 gem 'role_model'
 gem 'friendly_id', '~> 5.0.0'
+
+# Redactor Editor
 gem 'redactor-rails'
+gem "carrierwave"
+gem "mini_magick"
 
 group :doc do
   gem 'sdoc', require: false
