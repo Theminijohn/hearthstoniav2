@@ -1,5 +1,6 @@
 Hearthstoniav2::Application.routes.draw do
 
+  mount RedactorRails::Engine => '/redactor_rails'
   resources :tags
 
   root 'questions#index'
