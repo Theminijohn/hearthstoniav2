@@ -1,0 +1,104 @@
+.site-footer {
+  position: relative;
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #777;
+  border-top: 1px solid #EEE;
+}
+
+.site-footer:before, .site-footer:after {
+  content: " ";
+  display: table;
+}
+
+.site-footer-links.right {
+  float: right;
+}
+
+
+.site-footer-links {
+  float: left;
+  margin: 0;
+  list-style: none;
+}
+
+.right {
+  float: right;
+}
+
+ul, ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul, menu, dir {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+
+}
+
+.site-footer {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #777;
+}
+
+.site-footer-links li {
+  display: inline-block;
+  line-height: 16px;
+}
+
+.site-footer-links li+li {
+  padding-left: 10px;
+}
+
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.site-footer-links {
+  list-style: none;
+}
+
+.site-footer .octicon-mark-github {
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  height: 24px;
+  width: 24px;
+  margin-left: -12px;
+  font-size: 24px;
+  color: #CCC;
+}
+
+.mega-octicon {
+  font: normal normal 32px octicons;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mega-octicon:hover {
+  color: #2980b9;
+}
+
+.site-footer a {
+  color: #bababa;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #2980b9;
+}

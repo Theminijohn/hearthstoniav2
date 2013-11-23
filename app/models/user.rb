@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :questions
 
+  validates :first_name, :presence => true
+
   include RoleModel
 
   # optionally set the integer attribute to store the roles in,

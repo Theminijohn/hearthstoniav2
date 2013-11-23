@@ -1,11 +1,37 @@
-<%= question.title %>
-<%= question.body %>
-<%= link_to 'Show', question %>
-<% if can? :update, question %>
-  <%= link_to 'Edit', edit_question_path(question) %>
-<% end %>
-<% if can? :destroy, question %>
-  <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+<div class="step" id="step_79">
+  <%= link_to question, class: "list-group-item" do %>
+    <div class="step-progress-indicator complete ">
+
+      <div class="votes stats">
+        <div class="mini-counts">4</div>
+        <div>votes</div>
+      </div>
+
+      <div class="answers stats">
+        <div class="mini-counts">3</div>
+        <div>answers</div>
+      </div>
+
+      <div class="views stats">
+        <div class="mini-counts">4</div>
+        <div>views</div>
+      </div>
+
+    </div>
+
+    <div class="step-info">
+      <h3 class="list-group-item-heading step-title">
+        <%= question.title %>
+        <span class="list-group-item-text step-description length">02:13</span>
+      </h3>
+      <p class="list-group-item-text step-description">
+        <span class="label label-primary">Default</span>
+        <span class="label label-primary">Default</span>
+        <span class="badge">Default</span>
+        <span class="badge">Default</span>
+      </p>
+    </div>
+  <% end %>
+</div>
 
 <br>

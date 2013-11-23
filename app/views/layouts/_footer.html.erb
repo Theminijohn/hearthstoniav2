@@ -1,0 +1,22 @@
+<div class="site-footer">
+
+  <ul class="site-footer-links right">
+    <li><%= link_to "Tags", "#" %></li>
+    <li><%= link_to "Help", "#" %></li>
+    <li><%= link_to "About", "#" %></li>
+    <li><%= link_to "Blog", "#" %></li>
+  </ul>
+
+  <%= link_to root_path do %>
+    <span class="mega-octicon octicon-mark-github">
+      <i class="glyphicon glyphicon-tower"></i>
+    </span>
+  <% end %>
+
+  <ul class="site-footer-links">
+    <li>© <%= Time.now.year %> Hearthstonia</li>
+    <li><%= link_to "Facebook", "https://www.facebook.com/leagueio", :target => '_blank' %></li>
+    <li><%= link_to "Twitter", "https://twitter.com/Leagueio", :target => '_blank' %></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
