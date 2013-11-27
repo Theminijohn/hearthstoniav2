@@ -35,15 +35,22 @@
 
 
         <div class="panel-footer">
-            <%= f.submit "Post your Question", class: "btn btn-primary" %>
+          <button type="submit" class="ui-button button1">
+            <span class="button-left">
+              <span class="button-right"> Post your Question</span>
+            </span>
+          </button>
         </div>
+
       </div>
     <% end %>
   </div>
 
   <div class="col-md-3">
-    <button class="btn btn-primary" data-toggle="modal" data-target="#KeyboardShortcuts">
-      <span class="glyphicon glyphicon-ok-circle"></span> Keyboard Shortcuts
+    <button data-toggle="modal" data-target="#KeyboardShortcuts" class="ui-button button1">
+            <span class="button-left">
+              <span class="button-right"><span class="glyphicon glyphicon-ok-circle"></span> Keyboard Shortcuts</span>
+            </span>
     </button>
   </div>
 </div>

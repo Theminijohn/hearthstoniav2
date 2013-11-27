@@ -39,13 +39,14 @@
   outline: 0;
   display: inline-block;
   background-repeat: no-repeat;
+  background-color: transparent;
 }
 
 .sub-beta-button:hover { background-position: 100% -237px;}
 .sub-beta-button:hover .button-content { background-position: 0 -84px; }
 
 // Normal Button
-.button1 { height: 38px; }
+.button1 { height: 38px; background-color: transparent; }
 .button1 .button-left,
 .button1 .button-right { height: 38px; background-image: url("http://eu.battle.net/hearthstone/static/images/buttons/button4.png") }
 .button1 .button-left { padding-left: 35px; background-position: 0 0; }
