@@ -4,7 +4,11 @@
     <li><%= link_to "Tags", "#" %></li>
     <li><%= link_to "Help", "#" %></li>
     <li><%= link_to "About", "#" %></li>
-    <li><%= link_to "Blog", "#" %></li>
+    <li>
+      <a href="#" class="tag-tooltip"
+              data-original-title="Coming soon" data-placement="left">Blog
+      </a>
+    </li>
   </ul>
 
   <%= link_to root_path do %>
@@ -20,3 +24,8 @@
     <li><a href="#">Contact</a></li>
   </ul>
 </div>
+
+<br>
+
+<!-- Debug Console -->
+<%#= debug(params) if Rails.env.development? %>

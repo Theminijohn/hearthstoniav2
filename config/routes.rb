@@ -1,5 +1,6 @@
 Hearthstoniav2::Application.routes.draw do
 
+
   mount RedactorRails::Engine => '/redactor_rails'
   resources :tags
 
@@ -9,7 +10,18 @@ Hearthstoniav2::Application.routes.draw do
 
   get 'users/:id' => 'users#show', as: :user
 
-  resources :questions
+  resources :questions do
+    resources :answers do
+      member do
+        get :upvote
+        get :downvote
+      end
+    end
+    member do
+      get :upvote
+      get :downvote
+    end
+  end
 
   get "users/show"
   get 'about' => 'pages#about'

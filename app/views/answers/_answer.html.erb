@@ -1,0 +1,84 @@
+<div class="question">
+  <table>
+    <tbody><tr>
+      <td class="votecell">
+        <div class="vote">
+
+          <!--le Upvote-->
+          <%= link_to upvote_question_answer_path(@question, answer), class: "question_vote_up" do %>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+          <% end %>
+
+          <!--le Votes Size-->
+              <span class="question_vote_count">
+                <%= answer.votes_count %>
+              </span>
+
+          <!--le Downvote-->
+          <%= link_to downvote_question_answer_path(@question, answer), class: "question_vote_down" do %>
+            <span class="glyphicon glyphicon-chevron-down"></span>
+          <% end %>
+
+        </div>
+      </td>
+
+      <td class="postcell">
+        <div>
+          <div class="post-text">
+            <%= sanitize(answer.body) %>
+          </div>
+
+          <table class="fw">
+            <tbody>
+            <tr>
+
+              <td class="vt">
+                <div class="post-menu">
+                  <a href="#" title="#" class="short-link">share</a>
+                  <span class="lsep">|</span>
+                  <% if can? :update, @answer %>
+                    <%= link_to "edit", edit_question_answer_path(@question, answer) %>
+                    <span class="lsep">|</span>
+                  <% end %>
+                  <% if can? :destroy, @answer %>
+                    <%= link_to "delete", question_answer_path(@question, answer),
+                                method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <span class="lsep">|</span>
+                  <% end %>
+                  <a href="#" class="flag-post-link" title="#">flag</a>
+                </div>
+              </td>
+
+              <td class="post-signature owner">
+
+                <div class="user-info ">
+                  <div class="user-action-time">
+                    answered <span title="#" class="relativetime"><%= time_ago_in_words answer.created_at %> ago</span>
+                  </div>
+
+                  <div class="user-avatar32">
+                    <a href="#">
+                      <div>
+                        <img src="https://www.gravatar.com/avatar/9c2f2032e003370f8feab25c5c77fcac?s=32&amp;d=identicon&amp;r=PG">
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="user-details">
+                    <%= link_to answer.user.user_name, answer.user %>
+                    <br>
+                    <span class="reputation-score" title="reputation score " dir="ltr">61</span>
+                  </div>
+
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<hr>

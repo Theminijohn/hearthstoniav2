@@ -9,13 +9,37 @@ class Ability
      can :manage, :all
     else
       # Normal User
-      can :create, Question
       can :read, :all
+      # Questions
+      can :create, Question
       can :update, Question do |question|
         question.try(:user) == user
       end
       can :destroy, Question do |question|
         question.try(:user) == user
+      end
+
+      # Answers
+      can :create, Answer
+      can :update, Answer do |answer|
+        answer.try(:user) == user
+      end
+      can :destroy, Answer do |answer|
+        answer.try(:user) == user
+      end
+
+      # Votes
+      can :upvote, Question do |question|
+        question.try(:user) != user
+      end
+      can :downvote, Question do |question|
+        question.try(:user) != user
+      end
+      can :upvote, Answer do |answer|
+        answer.try(:user) != user
+      end
+      can :downvote, Answer do |answer|
+        anser.try(:user) != user
       end
     end
 

@@ -1,14 +1,164 @@
-<p id="notice"><%= notice %></p>
+<!--le Title-->
+<div id="question-header">
+  <h1>
+    <%= link_to @question.title, @question, class: "question-hyperlink" %>
+  </h1>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @question.title %>
-</p>
+<!--le Body-->
+<div class="row">
+  <div class="col-md-9">
 
-<p>
-  <strong>Body:</strong>
-  <%= @question.body %>
-</p>
+    <div class="question">
+      <table>
+        <tbody><tr>
+          <td class="votecell">
+            <div class="vote">
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+              <!--le Upvote-->
+              <%= link_to upvote_question_path(@question), class: "question_vote_up" do %>
+                <span class="glyphicon glyphicon-chevron-up"></span>
+              <% end %>
+
+              <!--le Votes Size-->
+              <span class="question_vote_count">
+                <%= @question.votes_count %>
+              </span>
+
+              <!--le Downvote-->
+              <%= link_to downvote_question_path(@question), class: "question_vote_down" do %>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              <% end %>
+
+              <!--le Favorites-->
+              <div class="question_favorite">
+                <span class="glyphicon glyphicon-heart-empty"></span>
+              </div>
+
+            </div>
+          </td>
+
+          <td class="postcell">
+            <div>
+              <div class="post-text">
+                <%= sanitize(@question.body) %>
+              </div>
+
+              <table class="fw">
+                <tbody>
+                <tr>
+
+                  <td class="vt">
+                    <div class="post-menu">
+                      <a href="#" title="#" class="short-link">share</a>
+                      <span class="lsep">|</span>
+                      <% if can? :update, @question %>
+                        <%= link_to "edit", edit_question_path %>
+                        <span class="lsep">|</span>
+                      <% end %>
+                      <% if can? :destroy, @question %>
+                        <%= link_to "delete", @question,
+                                    method: :delete, data: { confirm: 'Are you sure?' } %>
+                        <span class="lsep">|</span>
+                      <% end %>
+                      <a href="#" class="flag-post-link" title="#">flag</a>
+                    </div>
+                  </td>
+
+                  <td class="post-signature">
+
+                    <div class="user-info ">
+                      <div class="user-action-time">
+                        asked <span title="#" class="relativetime"><%= time_ago_in_words(@question.created_at) %> ago</span>
+                      </div>
+
+                      <div class="user-avatar32">
+                        <a href="#">
+                          <div>
+                            <img src="https://www.gravatar.com/avatar/9c2f2032e003370f8feab25c5c77fcac?s=32&amp;d=identicon&amp;r=PG">
+                          </div>
+                        </a>
+                      </div>
+
+                      <div class="user-details">
+                        <%= link_to @question.user.user_name, @question.user %>
+                        <br>
+                        <span class="reputation-score" title="reputation score " dir="ltr">61</span>
+                      </div>
+
+                    </div>
+                  </td>
+
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <!--le Answers-->
+    <div class="answers_header">
+      <% if @question.answers.present? %>
+        <h2><%= pluralize(@question.answers.count, 'Answer')%></h2>
+      <% else %>
+        <h2>No answers yet</h2>
+      <% end %>
+    </div>
+
+    <%= render @question.answers.order("created_at DESC") %>
+
+
+    <hr>
+    <!--le Form-->
+    <%= form_for([@question, @question.answers.new]) do |f| %>
+
+      <div class="form-group">
+        <%= f.label "Your Answer" %><br>
+        <%= f.text_area :body, class: "redactor redactor-box" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Post your Answer", class: "btn btn-primary" %>
+      </div>
+
+    <% end %>
+
+
+  </div>
+
+  <div class="col-md-3">
+
+    <div class="question_stats">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <p class="label-key">asked</p>
+            </td>
+            <td style="padding-left: 10px">
+              <p class="label-key"><b><%= time_ago_in_words @question.created_at %> ago</b></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="label-key">viewed</p>
+            </td>
+
+            <td style="padding-left: 10px">
+              <p class="label-key">
+                <b><%= @question.impressionist_count(:filter=>:session_hash) %> times</b>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+

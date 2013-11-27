@@ -1,20 +1,22 @@
-<div class="step" id="step_79">
+<div class="step">
   <%= link_to question, class: "list-group-item" do %>
-    <div class="step-progress-indicator complete ">
+    <div class="step-progress-indicator ">
 
       <div class="votes stats">
-        <div class="mini-counts">4</div>
-        <div>votes</div>
+        <div class="mini-counts"><%= question.votes_count %></div>
+        <div><%= "vote".pluralize(question.votes_count) %></div>
       </div>
 
       <div class="answers stats">
-        <div class="mini-counts">3</div>
-        <div>answers</div>
+        <div class="mini-counts"><%= question.answers.count %></div>
+        <div><%= "answer".pluralize(question.answers.count) %></div>
       </div>
 
       <div class="views stats">
-        <div class="mini-counts">4</div>
-        <div>views</div>
+        <div class="mini-counts"><%= question.impressionist_count(:filter=>:session_hash)%></div>
+        <div>
+          <%= "view".pluralize(question.impressionist_count(:filter=>:session_hash))%>
+        </div>
       </div>
 
     </div>
@@ -26,9 +28,10 @@
       </h3>
       <p class="list-group-item-text step-description">
         <span class="label label-primary">Default</span>
-        <span class="label label-primary">Default</span>
-        <span class="badge">Default</span>
-        <span class="badge">Default</span>
+        <span class="label label-warning">Default</span>
+        <span class="label label-danger">Default</span>
+        <span class="label label-info">Default</span>
+
       </p>
     </div>
   <% end %>

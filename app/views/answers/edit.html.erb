@@ -1,0 +1,23 @@
+<%= form_for [@question, @answer] do |f| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">
+        <h1>Edit your Answer</h1>
+      </div>
+    </div>
+
+    <div class="panel-body">
+
+      <div class="form-group">
+        <%= f.text_area :body, class: "redactor redactor-box" %>
+      </div>
+
+    </div>
+
+
+    <div class="panel-footer">
+      <%= f.submit "Edit your Answer", class: "btn btn-primary" %>
+      <%= link_to "Back", :back, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

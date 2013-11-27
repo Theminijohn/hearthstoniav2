@@ -23,11 +23,12 @@ class ApplicationController < ActionController::Base
   # Devise Strong Parameters
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:email, :password, :password_confirmation, :first_name)
+      u.permit(:email, :password, :password_confirmation, :first_name,
+               :user_name)
     end
     devise_parameter_sanitizer.for(:account_update) do |u|
       u.permit(:email, :password, :password_confirmation, :current_password,
-               :roles, :roles_mask, :first_name, :last_name)
+               :roles, :roles_mask, :first_name, :last_name, :user_name)
     end
   end
 

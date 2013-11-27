@@ -36,7 +36,7 @@ a.list-group-item {
 }
 
 .step-progress-indicator {
-  width: 200px;
+  width: 170px;
   height: 100%;
   float: left;
   position: absolute;
@@ -60,7 +60,7 @@ a.list-group-item {
 }
 .step .step-info {
   padding: 18px;
-  margin-left: 200px;
+  margin-left: 170px;
   overflow: hidden;
   zoom: 1;
 }
@@ -98,43 +98,23 @@ a.list-group-item .list-group-item-heading {
   font-weight: bold;
 }
 
-.votes {
-  position: relative;
-  float: left;
-  height: 38px;
-  width: 38px;
-  padding: 15px 5px 0 15px;
+.votes, .answers, .views {
+  color: #555;
+  padding: 15px 0 15px 10px;
   text-align: center;
-  color: #666;
-}
-
-.answers {
-  float: left;
-  height: 38px;
-  width: 38px;
-  padding: 15px 5px 0 15px;
-  text-align: center;
-  color: #666;
-}
-
-.views {
-  float: left;
-  height: 38px;
-  width: 38px;
-  padding: 15px 5px 0 30px;
-  text-align: center;
-  color: #666;
 }
 
 .mini-counts {
-  padding: 2px 0 4px 0;
-  line-height: 13px;
-  font-size: 16px;
-  margin-bottom: 7px;
+  height: 25px;
+  font-size: 160%;
+  font-weight: normal;
 }
 
 
 
+
+
+//
 
 
 
