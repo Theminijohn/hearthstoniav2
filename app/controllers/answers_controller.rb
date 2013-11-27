@@ -74,6 +74,7 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     @answer.upvote_from current_user
     increment_votes_count
+    @answer.user.add_points(10)
     redirect_to :back
   end
 
@@ -82,6 +83,7 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     @answer.downvote_from current_user
     decrement_votes_count
+    @answer.user.substract_points(2)
     redirect_to :back
   end
 

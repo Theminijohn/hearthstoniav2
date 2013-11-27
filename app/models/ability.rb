@@ -39,7 +39,7 @@ class Ability
         answer.try(:user) != user
       end
       can :downvote, Answer do |answer|
-        anser.try(:user) != user
+        answer.try(:user) != user
       end
     end
 

@@ -83,7 +83,7 @@
                       <div class="user-details">
                         <%= link_to @question.user.user_name, @question.user %>
                         <br>
-                        <span class="reputation-score" title="reputation score " dir="ltr">61</span>
+                        <span class="reputation-score" title="reputation score "><%= @question.user.points %></span>
                       </div>
 
                     </div>

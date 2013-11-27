@@ -75,6 +75,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.upvote_from current_user
     increment_votes_count
+    @question.user.add_points(5)
     redirect_to @question
   end
 
@@ -83,6 +84,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.downvote_from current_user
     decrement_votes_count
+    @question.user.substract_points(2)
     redirect_to @question
   end
 
