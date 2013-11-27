@@ -44,4 +44,17 @@
 .sub-beta-button:hover { background-position: 100% -237px;}
 .sub-beta-button:hover .button-content { background-position: 0 -84px; }
 
-//
+// Normal Button
+.button1 { height: 38px; }
+.button1 .button-left,
+.button1 .button-right { height: 38px; background-image: url("http://eu.battle.net/hearthstone/static/images/buttons/button4.png") }
+.button1 .button-left { padding-left: 35px; background-position: 0 0; }
+.button1 .button-right { padding-right: 35px; background-position: 100% -114px; height: 38px; line-height: 35px; font-size: 13px; color: #fefefe; text-shadow: 0 0 5px #dd3400; overflow:hidden }
+.ko-kr .button1 .button-right { font-family: Dotum; }
+.button1:hover .button-left { background-position: 0 -38px }
+.button1:hover .button-right { color: #fff; background-position: 100% -152px; }
+
+.button1.disabled .button-left,
+.button1.processing .button-left { background-position: 0 -76px; cursor:default }
+.button1.disabled .button-right,
+.button1.processing .button-right { color: #a79fa0; text-shadow: 0 0 5px #000; background-position:100% -190px; cursor:default }

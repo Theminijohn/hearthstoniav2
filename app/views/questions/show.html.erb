@@ -122,7 +122,21 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Post your Answer", class: "btn btn-primary" %>
+
+        <%= f.submit "Post your answer", class: "btn btn-primary" %>
+
+        <a class="ui-button button1" href="#">
+          <span class="button-left">
+            <span class="button-right"> Antwort hinzufügen</span>
+          </span>
+        </a>
+
+        <button type="submit" class="ui-button button1">
+          <span class="button-left">
+            <span class="button-right"> Antwort hinzufügen</span>
+          </span>
+        </button>
+
       </div>
 
     <% end %>
@@ -131,34 +145,68 @@
   </div>
 
   <div class="col-md-3">
+    <table xmlns="http://www.w3.org/1999/xhtml" class="media-frame">
+      <tr>
+        <td class="tl"></td>
+        <td class="tm">
+          <span class="tm-left"></span>
+          <span class="tm-mid"></span>
+          <span class="tm-right"></span>
+        </td>
+        <td class="tr"></td>
+      </tr>
+      <tr>
+        <td class="ml">
+          <span class="ml-top"></span>
+          <span class="ml-bottom"></span>
+        </td>
+        <td class="mm">
+         <div class="yolo-swaggings">
+          <table class="media-frame-unit-fix">
+            <tbody>
+            <tr>
+              <td>
+                <p class="label-key">asked</p>
+              </td>
+              <td style="padding-left: 10px">
+                <p class="label-key"><b><%= time_ago_in_words @question.created_at %> ago</b></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="label-key">viewed</p>
+              </td>
 
-    <div class="question_stats">
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <p class="label-key">asked</p>
-            </td>
-            <td style="padding-left: 10px">
-              <p class="label-key"><b><%= time_ago_in_words @question.created_at %> ago</b></p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p class="label-key">viewed</p>
-            </td>
+              <td style="padding-left: 10px">
+                <p class="label-key">
+                  <b><%= @question.impressionist_count(:filter=>:session_hash) %> times</b>
+                </p>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+         </div>
+        </td>
+        <td class="mr">
+          <span class="mr-top"></span>
+          <span class="mr-bottom"></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="bl"></td>
+        <td class="bm">
+          <span class="bm-left"></span>
+          <span class="bm-mid"></span>
+          <span class="bm-right"></span>
+        </td>
+        <td class="br"></td>
+      </tr>
+    </table>
 
-            <td style="padding-left: 10px">
-              <p class="label-key">
-                <b><%= @question.impressionist_count(:filter=>:session_hash) %> times</b>
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
+
+
+
 
   </div>
 </div>
-
-
