@@ -16,5 +16,6 @@
 //= require bootstrap
 //= require redactor-rails
 //= require redactor-rails/config.js
+//= require chosen-jquery
 //= require turbolinks
 //= require_tree .

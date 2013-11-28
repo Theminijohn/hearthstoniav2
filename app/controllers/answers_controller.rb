@@ -3,7 +3,7 @@ class AnswersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   # CanCan
-  load_and_authorize_resource
+  load_and_authorize_resource except: [:create]
 
   # GET /answers
   # GET /answers.json

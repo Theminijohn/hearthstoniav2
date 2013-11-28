@@ -3,7 +3,7 @@ class TagsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   # CanCan
-  load_and_authorize_resource
+  load_and_authorize_resource except: [:create]
 
   # GET /tags
   # GET /tags.json
@@ -68,7 +68,12 @@ class TagsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tag
-      @tag = Tag.find(params[:id])
+      @tag = Tag.find(params[:id]) 
+      # param that was sent is called :id in case of update it sends id of tag, not name, so find_by_name will return false and it wil try to find by id
+      # || this means OR  find this OR that, can't think of any other solution for the moment
+      # all this find_by_name things are done in routes and it will overide the method find, so it won't look for the record by id,
+      # it will look by whatever else param you'll set
+      # and writing in form  form_for @tag  in html will return  the url /tags/tag_name/edit  and not tags/3/edit.
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

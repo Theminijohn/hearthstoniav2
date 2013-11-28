@@ -17,6 +17,7 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'impressionist'
 gem 'acts_as_votable', '~> 0.8.0'
 gem 'merit'
+gem 'chosen-rails'
 
 # Redactor Editor
 gem 'redactor-rails'

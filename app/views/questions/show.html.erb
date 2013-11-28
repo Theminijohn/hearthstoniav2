@@ -49,6 +49,19 @@
                 <tr>
 
                   <td class="vt">
+
+                    <!--le Tags-->
+                    <ul class="ui-pagination">
+                      <% @question.tags.each do |tag| %>
+                        <li>
+                          <%= link_to tag do %>
+                          <span><%= tag.name %></span>
+                          <% end %>
+                        </li>
+                      <% end %>
+                    </ul>
+
+
                     <div class="post-menu">
                       <a href="#" title="#" class="short-link">share</a>
                       <span class="lsep">|</span>

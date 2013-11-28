@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   # CanCan
-  load_and_authorize_resource
+  load_and_authorize_resource except: [:create]
 
   # GET /questions
   # GET /questions.json
@@ -37,6 +37,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
+        @question.tag_with(params[:question][:tag_list])
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
         format.json { render action: 'show', status: :created, location: @question }
       else
@@ -51,6 +52,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
+        @question.tag_with(params[:question][:tag_list])
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
         format.json { head :no_content }
       else
@@ -107,6 +109,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:title, :body, :slug, :answer)
+      params.require(:question).permit(:title, :body, :slug, :answer, :tag_list)
     end
 end

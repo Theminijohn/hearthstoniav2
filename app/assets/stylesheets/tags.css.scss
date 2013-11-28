@@ -1,0 +1,18 @@
+// Tags   http://i.imgur.com/7caq7oD.png
+.ui-pagination { overflow: visible; height: 24px; list-style-type: none; }
+.ui-pagination li { margin-left: 4px; float: left; }
+.ui-pagination li a { display: inline-block; text-decoration: none; padding: 0; height: 24px; background: url("http://i.imgur.com/8UgFGLy.png") 100% -48px; }
+.ui-pagination li a span { display: block; margin: 0; padding: 0 9px; height: 24px; line-height: 24px; font-size: 11px; color: #fff; background: url("http://i.imgur.com/8UgFGLy.png") 0 0; }
+.cjk .ui-pagination li a span { line-height:22px }
+.ie6 .ui-pagination li a,
+.ie6 .ui-pagination li a span { display: block; float: left; }
+.ui-pagination li a:hover,
+.ui-pagination li.current a { background-position: 100% -72px; }
+.ui-pagination li a:hover span,
+.ui-pagination li.current a span { background-position: 0 -24px; }
+.ui-pagination li a:hover span { color: #DAAC55; }
+.ui-pagination li.current a span { color: #F3E6D0 !important; font-weight: bold; }
+.ui-pagination li.last-item a,
+.ui-pagination li.first-item a,
+.ui-pagination li.cap-item a { padding: 0; }
+

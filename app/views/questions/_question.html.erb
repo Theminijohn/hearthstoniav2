@@ -26,12 +26,13 @@
         <%= question.title %>
         <span class="list-group-item-text step-description length">02:13</span>
       </h3>
-      <p class="list-group-item-text step-description">
-        <span class="label label-primary">Default</span>
-        <span class="label label-warning">Default</span>
-        <span class="label label-danger">Default</span>
-        <span class="label label-info">Default</span>
 
+      <p class="list-group-item-text step-description">
+        <% question.tags.each do |tag| %>
+          <span class="label label-primary">
+            <%= tag.name %>
+          </span>
+        <% end %>
       </p>
     </div>
   <% end %>

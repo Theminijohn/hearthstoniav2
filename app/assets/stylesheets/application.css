@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require redactor-rails
+ *= require chosen
  *= require_tree .
  */
