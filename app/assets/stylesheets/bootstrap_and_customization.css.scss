@@ -1,11 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
-
-$body-bg:                     #ecf0f1;
-$font-family-sans-serif:      'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
+//$body-bg:                     #ecf0f1;
+$font-family-sans-serif:      'Ubuntu', sans-serif;
 $navbar-height:               45px;
 $navbar-default-bg:           white;
 $navbar-default-brand-color:  #2980b9;
-$brand-primary:               #2980b9;
+$brand-primary:               #000;
 $jumbotron-bg:                white;
 
 @import 'bootstrap';
@@ -19,7 +18,11 @@ $jumbotron-bg:                white;
 }
 
 body {
-  // background: #071122;
-  // url("http://eu.battle.net/hearthstone/static/images/body-content-bg.jpg") 50% 0 repeat-y;
+  background: #071122;
+  background: url("http://i.imgur.com/hI5KfZS.jpg") 50% 0 repeat-y;
   -webkit-background-size:auto;
+}
+
+a:hover {
+  color: #e22c14;
 }

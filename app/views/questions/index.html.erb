@@ -8,9 +8,17 @@
 
 </div>
 
-<% if user_signed_in? %>
-  <%= render @questions %>
-<% end %>
+<div class="row">
+
+  <div class="col-md-9">
+    <%= render @questions %>
+  </div>
+
+  <div class="col-md-3">
+    Here goes something
+  </div>
+
+</div>
 
 
 

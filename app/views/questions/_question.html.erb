@@ -1,41 +1,31 @@
-<div class="step">
-  <%= link_to question, class: "list-group-item" do %>
-    <div class="step-progress-indicator ">
+<div class="question_module">
 
-      <div class="votes stats">
-        <div class="mini-counts"><%= question.votes_count %></div>
-        <div><%= "vote".pluralize(question.votes_count) %></div>
-      </div>
+  <div class="qm_votes">
+    <div class="qm_count">5</div>
+    <div>votes</div>
+  </div>
 
-      <div class="answers stats">
-        <div class="mini-counts"><%= question.answers.count %></div>
-        <div><%= "answer".pluralize(question.answers.count) %></div>
-      </div>
+  <div class="qm_status">
+    <div class="qm_count">6</div>
+    <div>answers</div>
+  </div>
 
-      <div class="views stats">
-        <div class="mini-counts"><%= question.impressionist_count(:filter=>:session_hash)%></div>
-        <div>
-          <%= "view".pluralize(question.impressionist_count(:filter=>:session_hash))%>
-        </div>
-      </div>
+  <div class="qm_views">
+    <div class="qm_count">7</div>
+    <div>views</div>
+  </div>
 
+  <div class="qm_summary">
+
+    <h3><a href="#" title="#">Hey this is a nice Admin Question</a></h3>
+    <span class="label label-primary">Default</span>
+
+    <div class="qm_info">
+      <%= time_ago_in_words(question.created_at) %> ago
+      <%= link_to question.user.user_name, question.user %>
+      <%= question.user.points %>
     </div>
 
-    <div class="step-info">
-      <h3 class="list-group-item-heading step-title">
-        <%= question.title %>
-        <span class="list-group-item-text step-description length">02:13</span>
-      </h3>
+  </div>
 
-      <p class="list-group-item-text step-description">
-        <% question.tags.each do |tag| %>
-          <span class="label label-primary">
-            <%= tag.name %>
-          </span>
-        <% end %>
-      </p>
-    </div>
-  <% end %>
 </div>
-
-<br>

@@ -11,7 +11,6 @@
   padding-bottom: 40px;
   font-size: 12px;
   line-height: 1.5;
-  color: #777;
   //border-top: 1px solid #EEE;
 }
 
@@ -51,11 +50,6 @@ ul, menu, dir {
 
 }
 
-.site-footer {
-  font-size: 12px;
-  line-height: 1.5;
-  color: #777;
-}
 
 .site-footer-links li {
   display: inline-block;
@@ -79,11 +73,10 @@ li {
 .site-footer .octicon-mark-github {
   position: absolute;
   left: 50%;
-  height: 24px;
-  width: 24px;
+  height: 64px;
+  width: 64px;
   margin-left: -12px;
   font-size: 24px;
-  color: #CCC;
 }
 
 .mega-octicon {
@@ -92,18 +85,15 @@ li {
   display: inline-block;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
+  background-image: url("http://i.imgur.com/LgQUNWv.png");
 }
 
 .mega-octicon:hover {
-  color: #2980b9;
+  color: #e22c14;
 }
 
 .site-footer a {
-  color: #bababa;
   cursor: pointer;
   text-decoration: none;
 }
 
-.site-footer a:hover {
-  color: #2980b9;
-}
