@@ -1,0 +1,128 @@
+// Button with Wings
+// PSpIGLA
+.sub-beta-button {
+  height: 78px;
+  background: transparent url("http://i.imgur.com/bkPGs2v.png") 100% -160px no-repeat;
+  padding-right: 50px;
+  margin-left: 30px;
+  bottom: 18px;
+  z-index: 1;
+  position: relative;
+}
+.ui-button {
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  outline: 0;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.sub-beta-button .button-content {
+  background-image: url("http://i.imgur.com/bkPGs2v.png");
+  padding-left: 50px;
+  padding-right: 50px;
+  color: #fff;
+  font: normal normal 18px/86px "Ubuntu";
+  text-shadow: 0 0 4px #000, 0 0 8px #000;
+  overflow: hidden;
+  min-width: 110px;
+  margin-left: -30px;
+  height: 76px;
+  z-index: 2;
+}
+.ui-button span {
+  outline: 0;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+.sub-beta-button:hover { background-position: 100% -237px;}
+.sub-beta-button:hover .button-content { background-position: 0 -84px; }
+
+// Normal Button
+.button1 { height: 38px; background-color: transparent; }
+.button1 .button-left,
+.button1 .button-right { height: 38px; background-image: url("http://eu.battle.net/hearthstone/static/images/buttons/button4.png") }
+.button1 .button-left { padding-left: 35px; background-position: 0 0; }
+.button1 .button-right { padding-right: 35px; background-position: 100% -114px; height: 38px; line-height: 35px; font-size: 13px; color: #fefefe; text-shadow: 0 0 5px #dd3400; overflow:hidden }
+.ko-kr .button1 .button-right { font-family: Dotum; }
+.button1:hover .button-left { background-position: 0 -38px }
+.button1:hover .button-right { color: #fff; background-position: 100% -152px; }
+
+.button1.disabled .button-left,
+.button1.processing .button-left { background-position: 0 -76px; cursor:default }
+.button1.disabled .button-right,
+.button1.processing .button-right { color: #a79fa0; text-shadow: 0 0 5px #000; background-position:100% -190px; cursor:default }
+
+// Smaller Button
+.button2 span { background: transparent url("http://i.imgur.com/Y8ClLuJ.png") 0 0; line-height: 25px; height: 27px; padding: 0 0 0 22px; font-size: 11px; }
+.button2 span span { padding: 0 22px 0 0; background-position: 100% -81px; color: #fff; }
+.button2.hover span,
+.button2:hover span { background-position: 0 -27px; }
+.button2.hover span span,
+.button2:hover span span { background-position: 100% -108px; }
+
+.button2.disabled .button-left,
+.button2.processing .button-left { background-position: 0 -54px; cursor:default }
+.button2.disabled .button-right,
+.button2.processing .button-right { color: #bbb; background-position:100% -135px; cursor:default }
+
+
+// Media frame
+.media-frame { display: inline-block; width: auto; border-collapse: collapse; font-size: 0; position: relative; box-shadow: #000 0 0 5px; }
+.media-frame .tl,
+.media-frame .tr,
+.media-frame .bl,
+.media-frame .br { width: 8px; height: 8px; display: inline-block; background: url("http://eu.battle.net/hearthstone/static/images/frames/media-frame-corners.jpg") no-repeat; }
+.media-frame span { position: absolute; display: inline-block;  background: url("http://eu.battle.net/hearthstone/static/images/frames/media-frame-corners.jpg") no-repeat; }
+.media-frame .tm-left,
+.media-frame .tm-right,
+.media-frame .bm-left,
+.media-frame .bm-right { width: 13px; height: 8px; }
+.media-frame .tm-mid,
+.media-frame .bm-mid { width: 4px; height: 8px; left: 50%; }
+.media-frame .ml-top,
+.media-frame .ml-bottom ,
+.media-frame .mr-top,
+.media-frame .mr-bottom { width: 8px; height: 10px; }
+.media-frame .tm { height: 8px; background: url("http://eu.battle.net/hearthstone/static/images/frames/media-frame-bg-top.jpg") repeat-x; }
+.media-frame .bm { height: 8px; background: url("http://eu.battle.net/hearthstone/static/images/frames/media-frame-bg-bottom.jpg") repeat-x; }
+.media-frame .ml { width: 8px; background: url("http://eu.battle.net/hearthstone/static/images/frames/media-frame-bg-left.jpg") repeat-y; }
+.media-frame .mr { width: 8px; background: url("http://eu.battle.net/hearthstone/static/images/frames/media-frame-bg-right.jpg") repeat-y; }
+.media-frame .tm-left,
+.media-frame .tm-mid,
+.media-frame .tm-right { top: 0; }
+.media-frame .bm-left,
+.media-frame .bm-mid,
+.media-frame .bm-right { bottom: 0; }
+.media-frame .ml-top,
+.media-frame .mr-top { top: 8px; }
+.media-frame .ml-bottom,
+.media-frame .mr-bottom { bottom: 8px; }
+.media-frame .tm-left,
+.media-frame .bm-left { left: 8px; }
+.media-frame .tm-right,
+.media-frame .bm-right { right: 8px; }
+.media-frame .tm-left { background-position: -3px 0; }
+.media-frame .tm-mid { background-position: -30px 0; }
+.media-frame .tm-right { background-position: -16px 0; }
+.media-frame .bm-left { background-position: -3px -28px; }
+.media-frame .bm-mid { background-position: -30px -28px; }
+.media-frame .bm-right { background-position: -16px -28px; }
+.media-frame .ml-top { background-position: -8px -8px; }
+.media-frame .ml-bottom { background-position: -8px -18px; }
+.media-frame .mr-top { background-position: -16px -8px; }
+.media-frame .mr-bottom { background-position: -16px -18px; }
+.media-frame .tl { background-position: 0 -8px; }
+.media-frame .tr { background-position: -24px -8px; }
+.media-frame .bl { background-position: 0 -20px; }
+.media-frame .br { background-position: -24px -20px; }
+//mine
+.media-frame-unit-fix {width: 100%; p{ padding: 5px 15px 5px 5px;}}

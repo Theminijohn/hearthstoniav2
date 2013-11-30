@@ -63,18 +63,38 @@
 
 
                     <div class="post-menu">
-                      <a href="#" title="#" class="short-link">share</a>
-                      <span class="lsep">|</span>
+
+                      <%= link_to "#", class: "ui-button button2" do %>
+                        <span class="button-left">
+                          <span class="button-right">share</span>
+                        </span>
+                      <% end %>
+
                       <% if can? :update, @question %>
-                        <%= link_to "edit", edit_question_path %>
-                        <span class="lsep">|</span>
+                        <%= link_to edit_question_path, class: "ui-button button2" do %>
+                          <span class="button-left">
+                            <span class="button-right">edit</span>
+                          </span>
+                        <% end %>
                       <% end %>
+
                       <% if can? :destroy, @question %>
-                        <%= link_to "delete", @question,
-                                    method: :delete, data: { confirm: 'Are you sure?' } %>
-                        <span class="lsep">|</span>
+                        <%= link_to @question,
+                                    method: :delete, data: { confirm: 'Do you really want to delete this Question?' },
+                                    class: "ui-button button2" do %>
+                          <span class="button-left">
+                            <span class="button-right">delete</span>
+                          </span>
+                        <% end %>
                       <% end %>
-                      <a href="#" class="flag-post-link" title="#">flag</a>
+
+                      <%= link_to "#", class: "ui-button button2" do %>
+                        <span class="button-left">
+                          <span class="button-right">flag</span>
+                        </span>
+                      <% end %>
+
+
                     </div>
                   </td>
 
@@ -124,8 +144,8 @@
 
     <%= render @question.answers.order("created_at DESC") %>
 
+    <br>
 
-    <hr>
     <!--le Form-->
     <%= form_for([@question, @question.answers.new]) do |f| %>
 
@@ -205,11 +225,6 @@
         <td class="br"></td>
       </tr>
     </table>
-
-
-
-
-
 
   </div>
 </div>
