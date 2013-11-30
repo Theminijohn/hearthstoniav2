@@ -1,5 +1,8 @@
 require 'role_model'
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :user_name, :use => [:slugged, :finders, :history]
+
   has_merit
 
   acts_as_voter

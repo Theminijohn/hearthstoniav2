@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130091535) do
+ActiveRecord::Schema.define(version: 20131130102549) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -189,10 +189,12 @@ ActiveRecord::Schema.define(version: 20131130091535) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.string   "slug"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true
 
   create_table "votes", force: true do |t|
     t.integer  "votable_id"
