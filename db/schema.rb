@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128105548) do
+ActiveRecord::Schema.define(version: 20131130091535) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -181,6 +181,14 @@ ActiveRecord::Schema.define(version: 20131128105548) do
     t.string   "user_name"
     t.integer  "sash_id"
     t.integer  "level",                  default: 0
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

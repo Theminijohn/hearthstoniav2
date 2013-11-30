@@ -24,4 +24,9 @@ class User < ActiveRecord::Base
   # roles later, always append them at the end!
   roles :admin, :editor, :guest
 
+  # User Profile Pictures
+  has_attached_file :avatar, :styles => { :default => "100x100", :avatar => "32x32"}
+
+  has_attached_file :cover, :styles => { :default => "750x100#"}
+
 end

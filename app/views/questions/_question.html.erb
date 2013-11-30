@@ -1,18 +1,18 @@
 <div class="question_module">
 
   <div class="qm_votes">
-    <div class="qm_count">5</div>
-    <div>votes</div>
+    <div class="qm_count"><%= question.votes_count %></div>
+    <div><%= "vote".pluralize(question.votes_count) %></div>
   </div>
 
   <div class="qm_status">
-    <div class="qm_count">6</div>
-    <div>answers</div>
+    <div class="qm_count"><%= question.answers.count %></div>
+    <div><%= "answer".pluralize(question.answers.count) %></div>
   </div>
 
   <div class="qm_views">
-    <div class="qm_count">7</div>
-    <div>views</div>
+    <div class="qm_count"><%= question.impressionist_count(:filter=>:session_hash) %></div>
+    <div><%= "view".pluralize(question.impressionist_count(:filter=>:session_hash)) %></div>
   </div>
 
   <div class="qm_summary">

@@ -1,3 +1,4 @@
+<% unless user_signed_in? %>
 <div class="heartstonia_welcome_jumbo">
   <h1>Welcome to Hearthstonia</h1>
   <br>
@@ -10,7 +11,7 @@
   <%= link_to "learn more", '#', class: "hwj_link" %>
   </p>
 </div>
-
+<% end %>
 
 
 <div class="row">

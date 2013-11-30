@@ -18,6 +18,7 @@ gem 'impressionist'
 gem 'acts_as_votable', '~> 0.8.0'
 gem 'merit'
 gem 'chosen-rails'
+gem 'paperclip', '~> 3.0'
 
 # Redactor Editor
 gem 'redactor-rails'

@@ -1,2 +1,66 @@
-<h1><%= @user.email %></h1>
+<div class="content-section">
 
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <div class="search">
+
+        <div class="search-left">
+
+          <div class="search-header">
+            <h2 class="user_profile_avatar">
+              <%= image_tag @user.avatar.url(:default) %>
+            </h2>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="col-md-8">
+
+      <div class="user_profile_cover">
+
+        <div class="pull-left upc_user_name">
+          <h1><%= @user.user_name %></h1>
+        </div>
+
+        <div class="pull-right upc_user_points">
+          <h1><%= @user.points %></h1>
+        </div>
+
+        <div class="clearfix"></div>
+
+      </div>
+
+      <!--le Informations-->
+      <div class="under_upc">
+
+        <div class="pull-left">
+
+        </div>
+
+        <div class="pull-right">
+          <% start_time =  @user.created_at %>
+          <% end_time   =  Date.today %>
+          Member for <%= distance_of_time_in_words(start_time, end_time)  %>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-8">
+      <%= render @user.questions %>
+    </div>
+
+
+  </div>
+
+
+
+</div>
