@@ -1,0 +1,23 @@
+.heartstonia_welcome_jumbo {
+  background: url(http://i.imgur.com/UV3vjaN.png) no-repeat center center;
+  padding: 48px 60px 48px 60px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  h1 {
+    color: #fff;
+    text-shadow: 0 0 15px #000, 0 0 15px #000;
+  }
+  .hwj_link {
+    padding-left: 300px;
+    color: #fff;
+    text-shadow: 0 0 5px #000, 0 0 5px #000;
+    a {
+      text-decoration: none;
+      &:hover {
+        color: #d54830;
+      }
+    }
+  }
+}

@@ -18,11 +18,21 @@
   <div class="qm_summary">
 
     <h3><%= link_to question.title, question %></h3>
-    <span class="label label-primary">Default</span>
+    <ul class="ui-pagination">
+      <% question.tags.each do |tag| %>
+        <li>
+          <%= link_to tag do %>
+            <span><%= tag.name %></span>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
 
     <div class="qm_info">
       <%= time_ago_in_words(question.created_at) %> ago
-      <%= link_to question.user.user_name, question.user %>
+      <span class="qm_info_user">
+        <%= link_to question.user.user_name, question.user %>
+      </span>
       <%= question.user.points %>
     </div>
 

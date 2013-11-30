@@ -1,5 +1,7 @@
 .question_module {
-  display: block;
+  height: 100%;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #d4c08f;
 }
 
 /* Votes */
@@ -7,13 +9,15 @@
   float: left;
   height: 38px;
   width: 38px;
-  margin: 0 5px 0 0;
+  margin: 6px 10px 0 0;
   padding: 0 0 7px 0;
   text-align: center;
 }
 
 .qm_votes .qm_count {
   margin-bottom: 11px;
+  line-height: 13px;
+  font-size: 16px;
 }
 
 
@@ -22,13 +26,15 @@
   float: left;
   height: 38px;
   width: 48px;
-  margin: 0 5px 0 0;
+  margin: 6px 10px 0 0;
   padding: 0 0 7px 0;
   text-align: center;
 }
 
 .qm_status .qm_count {
   margin-bottom: 11px;
+  line-height: 13px;
+  font-size: 16px;
 }
 
 /* Views */
@@ -36,18 +42,21 @@
   float: left;
   height: 38px;
   width: 48px;
-  margin: 0 5px 0 0;
+  margin: 6px 10px 0 0;
   padding: 0 0 7px 0;
   text-align: center;
 }
 
 .qm_views .qm_count {
   margin-bottom: 11px;
+  line-height: 13px;
+  font-size: 16px;
 }
 
 
 // Question Module Summary (Left Side)
 .qm_summary {
+  display: block;
   width: 100%;
   h3 {
     font-size: 15px;
@@ -58,9 +67,18 @@
   }
 }
 
+// Tags
+.qm_summary .ui-pagination {
+  display: inline-block;
+  margin: -2px 0 0 -3px!important;
+}
+
 // Question Module Info (Righ side)
 .qm_info {
   float: right;
   white-space: nowrap;
   line-height: 18px;
+  .qm_info_user a {
+    color: #e22c14;
+  }
 }
