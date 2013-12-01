@@ -16,8 +16,22 @@
 
 
     <div class="panel-footer">
-      <%= f.submit "Edit your Answer", class: "btn btn-primary" %>
-      <%= link_to "Back", :back, class: "btn btn-primary" %>
+      <div class="actions">
+        <button type="submit" class="ui-button button1">
+          <span class="button-left">
+            <span class="button-right"> Edit your Answer</span>
+          </span>
+        </button>
+
+      <a href="javascript:history.back()">
+        <button class="ui-button button1">
+            <span class="button-left">
+              <span class="button-right"> Back </span>
+            </span>
+        </button>
+      </a>
+
+      </div>
     </div>
   </div>
 <% end %>

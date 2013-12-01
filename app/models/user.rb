@@ -28,8 +28,10 @@ class User < ActiveRecord::Base
   roles :admin, :editor, :guest
 
   # User Profile Pictures
-  has_attached_file :avatar, :styles => { :default => "100x100", :avatar => "32x32"}
+  has_attached_file :avatar, :styles => { :default => "100x100>", :avatar => "32x32>"},
+                    :content_type => { :content_type => "image/jpg, image/png, image/jpeg" },
+                    :default_url => "https://s3.amazonaws.com/hearthstonia/App-Design/user-profile/default_picture.png"
 
-  has_attached_file :cover, :styles => { :default => "750x100#"}
+  # has_attached_file :cover, :styles => { :default => "750x100#"}
 
 end

@@ -1,2 +1,144 @@
-<%= render 'form' %>
+<div class="row">
+  <div class="col-md-9">
+    <%= form_for(@question, html: { multipart: true }) do |f| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <h1>Edit your Question</h1>
+          </div>
+        </div>
 
+        <div class="panel-body">
+          <% if @question.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+              <ul>
+                <% @question.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :title %><br>
+            <%= f.text_field :title, class: "form-control", :autofocus => true,
+                             placeholder: "What's your Hearthstone Question. Be specific"%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :body %><br>
+            <%= f.text_area :body, class: "redactor redactor-box" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.collection_select :tag_list, Tag.order(:name), :name, :name, {}, {multiple: true} %>
+          </div>
+
+        </div>
+
+
+        <div class="panel-footer">
+
+          <button type="submit" class="ui-button button1">
+            <span class="button-left">
+              <span class="button-right"> Edit your Question</span>
+            </span>
+          </button>
+
+          <a href="javascript:history.back()">
+            <button class="ui-button button1">
+            <span class="button-left">
+              <span class="button-right"> Back </span>
+            </span>
+            </button>
+          </a>
+
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-md-3">
+    <button data-toggle="modal" data-target="#KeyboardShortcuts" class="ui-button button1">
+            <span class="button-left">
+              <span class="button-right"><span class="glyphicon glyphicon-ok-circle"></span> Keyboard Shortcuts</span>
+            </span>
+    </button>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="KeyboardShortcuts" tabindex="-1" role="dialog" aria-labelledby="KeyboardShortcuts" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><b>Keyboard shortcuts</b></h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <td></td>
+            <td>OS X</td>
+            <td>Windows</td>
+          </tr>
+          </thead>
+          <tbody><tr>
+            <td>Undo</td>
+            <td><kbd>Cmd + z</kbd></td>
+            <td><kbd>Ctrl + z</kbd></td>
+          </tr>
+          <tr>
+            <td>Redo</td>
+            <td><kbd>Cmd + Shift + z</kbd></td>
+            <td><kbd>Ctrl + Shift + z</kbd></td>
+          </tr>
+          <tr>
+            <td>Increase indent</td>
+            <td><kbd>Tab</kbd></td>
+            <td><kbd>Tab</kbd></td>
+          </tr>
+          <tr>
+            <td>Decrease indent</td>
+            <td><kbd>Shift + Tab</kbd></td>
+            <td><kbd>Shift + Tab</kbd></td>
+          </tr>
+          <tr>
+            <td>Clear formatting</td>
+            <td><kbd>Cmd + m</kbd></td>
+            <td><kbd>Ctrl + m</kbd></td>
+          </tr>
+          <tr>
+            <td>Bold</td>
+            <td><kbd>Cmd + b</kbd></td>
+            <td><kbd>Ctrl + b</kbd></td>
+          </tr>
+          <tr>
+            <td>Italic</td>
+            <td><kbd>Cmd + i</kbd></td>
+            <td><kbd>Ctrl + i</kbd></td>
+          </tr>
+          <tr>
+            <td>Numbered list</td>
+            <td><kbd>Cmd + k</kbd></td>
+            <td><kbd>Ctrl + k</kbd></td>
+          </tr>
+          <tr>
+            <td>Bulleted list</td>
+            <td><kbd>Cmd + j</kbd></td>
+            <td><kbd>Ctrl + j</kbd></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

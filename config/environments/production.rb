@@ -80,5 +80,14 @@ Hearthstoniav2::Application.configure do
 
   # Required for Action Mailer
   # Should be the Domain Later
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  # Required for Devise-Mailer
+  config.action_mailer.default_url_options = { :host => 'hearthstonia.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address              => "mail.hearthstonia.com",
+      :port                 => 25,
+      :user_name            => 'info@hearthstonia.com',
+      :password             => '1nam-mo2',
+      :authentication       => 'plain',
+      :enable_starttls_auto => false  }
 end

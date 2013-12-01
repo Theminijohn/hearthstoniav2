@@ -106,11 +106,11 @@
                       </div>
 
                       <div class="user-avatar32">
-                        <a href="#">
+                        <%= link_to @question.user do %>
                           <div>
-                            <img src="https://www.gravatar.com/avatar/9c2f2032e003370f8feab25c5c77fcac?s=32&amp;d=identicon&amp;r=PG">
+                            <%= image_tag @question.user.avatar.url(:avatar) %>
                           </div>
-                        </a>
+                        <% end %>
                       </div>
 
                       <div class="user-details">
@@ -132,6 +132,8 @@
       </table>
 
     </div>
+
+    <br>
 
     <!--le Answers-->
     <div class="answers_header">

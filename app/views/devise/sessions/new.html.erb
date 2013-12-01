@@ -1,35 +1,49 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="panel-title">
-      <h1>Sign in</h1>
+<div class="signing_header">
+  <h1>Welcome back brave Hearthstonian</h1>
+</div>
+
+<div class="panel-body signin-background">
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+    <div class="form-group signin-fixes-top ">
+      <%= f.email_field :email, class: "form-control signin-inputs", :autofocus => true,
+                        :placeholder => "Email"%>
     </div>
-  </div>
-  <div class="panel-body">
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
-      </div>
+    <div class="form-group">
+      <%= f.password_field :password, class: "form-control signin-inputs",
+                           :placeholder => "Password"%>
+    </div>
 
-      <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, class: "form-control" %>
-      </div>
+    <!--<div class="form-group">-->
+      <!--<div class="checkbox signin-fixes">-->
+        <!--<%= f.check_box :remember_me%>-->
+        <!--<%= f.label :remember_me %>-->
+      <!--</div>-->
+    <!--</div>-->
 
-      <div class="form-group">
-        <div class="checkbox">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      </div>
+    <div class="form-group">
+      <button type="submit" class="ui-button button1">
+        <span class="button-left">
+          <span class="button-right"> Sign in</span>
+        </span>
+      </button>
 
-      <div class="form-group">
-        <%= f.submit "Sign in", class: "btn btn-primary" %>
-      </div>
-    <% end %>
-  </div>
-  <div class="panel-footer">
-    <%= render "devise/shared/links" %>
-  </div>
+
+    </div>
+  <% end %>
+</div>
+
+<div class="signin_buttom_links">
+  <%= link_to new_registration_path(resource_name), class: "ui-button button2" do %>
+    <span class="button-left">
+      <span class="button-right">Sign up</span>
+    </span>
+  <% end %>
+
+  <%= link_to new_password_path(resource_name), class: "ui-button button2" do %>
+    <span class="button-left">
+      <span class="button-right">Forgot your password?</span>
+    </span>
+  <% end %>
 </div>
