@@ -16,15 +16,31 @@
 
       <div class="form-group">
         <%= f.label :password_confirmation, "Confirm new password" %>
-        <%= f.password_field :password_confirmation %>
+        <%= f.password_field :password_confirmation,  class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.submit "Change my password", class: "btn btn-primary" %>
+        <button type="submit" class="ui-button button1">
+        <span class="button-left">
+          <span class="button-right"> Change my Password</span>
+        </span>
+        </button>
       </div>
     <% end %>
   </div>
   <div class="panel-footer">
-    <%= render "devise/shared/links" %>
+
+    <%= link_to new_user_session_path, class: "ui-button button2" do %>
+    <span class="button-left">
+      <span class="button-right">Sign in</span>
+    </span>
+    <% end %>
+
+    <%= link_to new_user_registration_path, class: "ui-button button2" do %>
+    <span class="button-left">
+      <span class="button-right">Sign up</span>
+    </span>
+    <% end %>
+
   </div>
 </div>
